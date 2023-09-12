@@ -1,0 +1,23 @@
+def tent_map(r, x):
+    # Chaotic when 0 < r < 1
+    return r * (1 - 2 * abs(x - 0.5))
+
+
+def bernoulli_map(r, x):
+    # Chaotic when 0 < r < 1
+    return (2 * r * x) % 1 + (1 - r) / 2
+
+
+def circle_map(k, x):
+    # Chaotic when 0.97 < k < 1.32
+    return x + k - 2 * math.pi * math.floor((x + k)/(2 * math.pi))
+
+
+def quadratic_map(r, x):
+    # Chaotic when 1 < r < 2
+    return r - x * x
+
+
+def sinusoidal_map(a, x):
+    # Chaotic when 1.2 < a < 1.8
+    return a * math.sin(math.pi * x)
